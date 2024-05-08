@@ -1,7 +1,9 @@
-
 import 'package:flutter/material.dart';
 
 class QuestionScreen extends StatelessWidget {
+
+  String selectedAnswer = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,21 +17,28 @@ class QuestionScreen extends StatelessWidget {
           children: [
             Text(
               'Which plant in our system is know as the Red Plant?',
-              style: TextStyle(fontSize: 25.0,color: Colors.white,fontWeight: FontWeight.bold,),textAlign: TextAlign.center,),
-
-
+              style: TextStyle(
+                fontSize: 25.0,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
             SizedBox(height: 20.0),
             SizedBox(
               width: 350.0, // Adjust the width as needed
               child: ElevatedButton(
                 onPressed: () {
-                  // Handle option A
+
                 },
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.purple,
-                    foregroundColor: Colors.white,side: BorderSide(style: BorderStyle.solid,color: Colors.white)
+                    foregroundColor: Colors.white, backgroundColor: selectedAnswer == '1' ? Colors.green : Colors.purple,
+                    side: BorderSide(
+                      style: BorderStyle.solid,
+                      color: Colors.white,)),
+                child: Text(
+                  '1. Alexander Fleming',
                 ),
-                child: Text('1. Alexander Fleming',),
               ),
             ),
             SizedBox(height: 10.0),
@@ -41,8 +50,9 @@ class QuestionScreen extends StatelessWidget {
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.purple,
-                    foregroundColor: Colors.white,side: BorderSide(style: BorderStyle.solid,color: Colors.white)
-                ),
+                    foregroundColor: Colors.white,
+                    side: BorderSide(
+                        style: BorderStyle.solid, color: Colors.white)),
                 child: Text('2. Alexander Graham Bell'),
               ),
             ),
@@ -55,22 +65,27 @@ class QuestionScreen extends StatelessWidget {
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.purple,
-                    foregroundColor: Colors.white,side: BorderSide(style: BorderStyle.solid,color: Colors.white)// Button color
-                ),
+                    foregroundColor: Colors.white,
+                    side: BorderSide(
+                        style: BorderStyle.solid,
+                        color: Colors.white) // Button color
+                    ),
                 child: Text('3. Thomas Alva Edison'),
               ),
             ),
             SizedBox(height: 10.0),
             SizedBox(
               width: 350.0, // Adjust the width as needed
-              child: ElevatedButton(
+              child:ElevatedButton(
                 onPressed: () {
-                  // Handle option D
+                 
                 },
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.purple,
-                    foregroundColor: Colors.white,side: BorderSide(style: BorderStyle.solid,color: Colors.white)
-                  // Button color
+                  foregroundColor: Colors.white, backgroundColor: selectedAnswer == '4' ? Colors.green : Colors.purple,
+                  side: BorderSide(
+                    style: BorderStyle.solid,
+                    color: Colors.white,
+                  ),
                 ),
                 child: Text('4. Mars'),
               ),
@@ -80,4 +95,5 @@ class QuestionScreen extends StatelessWidget {
       ),
     );
   }
+
 }

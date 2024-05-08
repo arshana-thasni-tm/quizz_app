@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quizz_app/screens/firstpage.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
