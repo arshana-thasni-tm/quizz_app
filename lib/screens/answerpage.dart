@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:quizz_app/screens/answerpage.dart';
 
-class QuestionScreen extends StatefulWidget {
+class AnswerPage extends StatefulWidget {
   @override
-  _QuestionScreenState createState() => _QuestionScreenState();
+  _AnswerPageState createState() => _AnswerPageState();
 }
 
-class _QuestionScreenState extends State<QuestionScreen> {
+class _AnswerPageState extends State<AnswerPage> {
   String selectedAnswer = '';
 
   @override
@@ -59,7 +58,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
               child: ElevatedButton(
                 onPressed: () {
                   setState(() {
-                    selectedAnswer = '2'; // Update selected answer to '1'
+                    selectedAnswer = '2'; // Update selected answer to '2'
                   });
                 },
                 style: ElevatedButton.styleFrom(
@@ -81,7 +80,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
               child: ElevatedButton(
                 onPressed: () {
                   setState(() {
-                    selectedAnswer = '3'; // Update selected answer to '1'
+                    selectedAnswer = '3'; // Update selected answer to '3'
                   });
                 },
                 style: ElevatedButton.styleFrom(
@@ -102,14 +101,8 @@ class _QuestionScreenState extends State<QuestionScreen> {
               width: 350.0, // Adjust the width as needed
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => AnswerPage()),
-                  );
                   setState(() {
-
-                    selectedAnswer = '4';
-                    // Update selected answer to '4' (Mars)
+                    selectedAnswer = '4'; // Update selected answer to '4'
                   });
                 },
                 style: ElevatedButton.styleFrom(
@@ -123,6 +116,22 @@ class _QuestionScreenState extends State<QuestionScreen> {
                   ),
                 ),
                 child: const Text('4. Mars'),
+              ),
+            ),
+            const SizedBox(height: 100.0), // Add SizedBox with button under Mars option
+            SizedBox(
+              width: 150.0,
+              child: ElevatedButton(
+                onPressed: () {
+                  // Handle button press
+                },
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.black, backgroundColor: Colors.white, // Change text color here
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15), // Set the border radius here
+                  ),
+                ),
+                child: const Text('Next'),
               ),
             ),
           ],
